@@ -24,7 +24,8 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     long memoria_utilizada = total_memoria - memoria_libre; 
 
     seq_printf(archivo," __________________________________________\n");
-    seq_printf(archivo,"/  Lab. Sistemas operativos 1              \\\n");
+    seq_printf(archivo,"/                                          \\\n");
+    seq_printf(archivo,"|  Lab. Sistemas operativos 1              |\n");
     seq_printf(archivo,"|  Vacas Junio 2020                        |\n");
     seq_printf(archivo,"|  Fernando Pensamiento Calderon           |\n");
     seq_printf(archivo,"|  201602743                               |\n");
@@ -64,20 +65,21 @@ static int al_abrir(struct inode *inode, struct file *file)
 }
 
 static struct file_operations operaciones =
-    {
+{
         .open = al_abrir,
-        .read = seq_read};
+        .read = seq_read
+};
 
 static int begin(void)
 {
-    proc_create("cpu_201602743_201602520", 0, NULL, &operaciones);
+    proc_create("memo_201602743_201602520", 0, NULL, &operaciones);
     printk(KERN_INFO "Carnet: 2016-02743_2016-02520\n");
     return 0;
 }
 
 static void terminar(void)
 {
-    remove_proc_entry("cpu_201602743_201602520", NULL);
+    remove_proc_entry("memo_201602743_201602520", NULL);
     printk(KERN_INFO "Curso: Sistemas Operativos 1\n");
 }
 
