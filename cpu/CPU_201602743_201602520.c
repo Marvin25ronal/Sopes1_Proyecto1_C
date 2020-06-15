@@ -212,14 +212,14 @@ static const struct file_operations hello_proc_fops = {
 
 static int __init hello_proc_init(void)
 {
-    printk(KERN_INFO "Carnet: 2016-02743_2016-02520\n");
+    printk(KERN_INFO "CPU: 2016-02743_2016-02520\n");
     proc_create("CPU_201602743_201602520", 0, NULL, &hello_proc_fops); // CREAR EL ARCHIVO DEL PROC
     return 0;
 }
 
 static void __exit hello_proc_exit(void)
 {
-    printk(KERN_INFO "Sistemas Operativos 1\n");
+    printk(KERN_INFO "CPU: Sistemas Operativos 1\n");
     remove_proc_entry("CPU_201602743_201602520", NULL);
 }
 

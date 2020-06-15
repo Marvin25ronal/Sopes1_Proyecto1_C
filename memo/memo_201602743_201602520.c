@@ -68,7 +68,7 @@ static int iniciando(void)
 {
     proc_create("memo_201602743_201602520", 0, NULL, &operaciones);
 
-    printk(KERN_INFO "Carnet: 2016-02743_2016-02520\n");
+    printk(KERN_INFO "memo: 2016-02743_2016-02520\n");
 
     return 0;
 }
@@ -77,7 +77,7 @@ static void terminando(void)
 {
     remove_proc_entry("memo_201602743_201602520", NULL);
 
-    printk(KERN_INFO "Curso: Sistemas Operativos 1\n");
+    printk(KERN_INFO "memo: Sistemas Operativos 1\n");
 }
 
 MODULE_LICENSE("GPL");
