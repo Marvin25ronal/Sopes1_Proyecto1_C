@@ -7,16 +7,10 @@
 #include <linux/kernel.h>
 #include <linux/fs.h>
 
-#define BUFSIZE 150
 
-MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Info Ram");
-MODULE_AUTHOR("Fernando Pensamiento y Marvin Martinez");
-
-struct sysinfo inf;
-
-static int escribir_archivo(struct seq_file *archivo, void *v)
+static int modArchivo(struct seq_file *archivo, void *v)
 {
+    struct sysinfo inf;
     si_meminfo(&inf);
     long total_memoria = (inf.totalram * 4);
     long memoria_libre = (inf.freeram * 4);
@@ -59,29 +53,33 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     return 0;
 }
 
-static int al_abrir(struct inode *inode, struct file *file)
+static int abriendo(struct inode *inode, struct file *file)
 {
-    return single_open(file, escribir_archivo, NULL);
+    return single_open(file, modArchivo, NULL);
 }
 
 static struct file_operations operaciones =
 {
-        .open = al_abrir,
+        .open = abriendo,
         .read = seq_read
 };
 
-static int begin(void)
+static int iniciando(void)
 {
     proc_create("memo_201602743_201602520", 0, NULL, &operaciones);
+
     printk(KERN_INFO "Carnet: 2016-02743_2016-02520\n");
+
     return 0;
 }
 
-static void terminar(void)
+static void terminando(void)
 {
     remove_proc_entry("memo_201602743_201602520", NULL);
+
     printk(KERN_INFO "Curso: Sistemas Operativos 1\n");
 }
 
-module_init(begin);
-module_exit(terminar);
+MODULE_LICENSE("GPL");
+module_init(iniciando);
+module_exit(terminando);
