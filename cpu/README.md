@@ -31,9 +31,9 @@ task_struct: structura la cual contiene un proceso, con la variable current se o
 Una vez obtenido esto solo falta hacer de una forma recursiva que se imprima el proceso y se muestren los procesos hijos. 
 
 ## Datos importantes de la estructura task_struct
-
+```r
 pid: el id del proceso. 
 comm: el nombre del proceso.
 state: el estado del proceso(se obtiene de forma numerica pero se puede obtener que significa cada numero)
 children: los procesos hijos que tiene el proceso.
-
+```
