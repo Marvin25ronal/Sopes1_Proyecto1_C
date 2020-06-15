@@ -3,12 +3,13 @@
 
 En esta practica se realizaron 2 modulos. 
 
-### Modulo de memoria
+
+### [Modulo de memoriia](https://github.com/Marvin25ronal/Sopes1_Proyecto1_C/tree/master/memo)
 
 En el modulo de memoria se crea un archivo llamado memo_201602743_201602520 el cual se encuentra en la carpeta /proc
 cada vez que se abre el archivo este llama un metodo el cual gracias a la estructura si_meminfo obtiene datos de la memeoria. 
 
-### Modulo de CPU 
+### [Modulo de CPU](https://github.com/Marvin25ronal/Sopes1_Proyecto1_C/tree/master/cpu) 
 
 En el modulo de memoria se crea un archivo llamado memo_201602743_201602520 el cual se encuentra en la carpeta /proc
 cada vez que se are el archivo este llama un metodo el cual gracias a la estructura task_struct obtiene un proceso el cual se puede subir hasta llegar al primer proceso. 
