@@ -49,7 +49,7 @@ static int modArchivo(struct seq_file *archivo, void *v)
     seq_printf(archivo, "  Memoria Libre     : \t %8lu KB - %8lu MB \n", memoria_libre, memoria_libre / 1024);
     seq_printf(archivo, "  Memoria Utilizada : \t %8lu KB - %8lu MB \n", memoria_utilizada, memoria_utilizada / 1024);
     
-    seq_printf(archivo, "  Memoria en uso: \t %i %%\n", (memoria_utilizada * 100) / total_memoria);
+    seq_printf(archivo, "  Memoria en uso: \t %8lu %%\n", (memoria_utilizada * 100) / total_memoria);
     return 0;
 }
 
